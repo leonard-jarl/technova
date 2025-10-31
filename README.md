@@ -1,0 +1,1 @@
+# Individuell examination för kursen "Utveckling av AI-drivna webbapplikationer" - Leonard Jarl

@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+@theme {
+  --color-*: initial;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-blue: #28a8d7;
+  --color-dark-blue: #2b28d7;
+  --color-shadow: #28a8d754;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex: 1;
+}
+
+/* Chatbot open animation: 1s, first width expands (0-50%), then height (50-100%) */
+@keyframes chat-open {
+  0% {
+    width: 12rem;
+    height: 3rem;
+  }
+  50% {
+    width: 30rem;
+    height: 3rem;
+  }
+  100% {
+    width: 30rem;
+    height: 35rem;
+  }
+}
+
+@keyframes chat-close {
+  0% {
+    width: 30rem;
+    height: 35rem;
+  }
+  50% {
+    width: 30rem;
+    height: 3rem;
+  }
+  100% {
+    width: 12rem;
+    height: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  @keyframes chat-open {
+    0% {
+      width: 12rem;
+      height: 3rem;
+    }
+    50% {
+      width: 25rem;
+      height: 3rem;
+    }
+    100% {
+      width: 25rem;
+      height: 30rem;
+    }
+  }
+
+  @keyframes chat-close {
+    0% {
+      width: 25rem;
+      height: 30rem;
+    }
+    50% {
+      width: 25rem;
+      height: 3rem;
+    }
+    100% {
+      width: 12rem;
+      height: 3rem;
+    }
+  }
+}
+
+.animate-chat-open {
+  animation: chat-open 0.5s ease forwards;
+}
+
+.animate-chat-close {
+  animation: chat-close 0.5s ease forwards;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Loading animation */
+.loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.loading-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: currentColor;
+  opacity: 0.3;
+  animation: loading-bounce 1s ease-in-out infinite;
+}
+.loading-dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.loading-dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes loading-bounce {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+  40% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+/* Message Styling */
+
+#message > :not(:first-child):not(h1, h2, h3, h4, h5, h6) {
+  margin-bottom: 1rem;
+}
+
+#message > h3 {
+  margin-bottom: 0;
+}
+
+#message > hr {
+  margin: 1rem 0;
+}
+
+#message > ul,
+#message > ol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 1rem;
+}
+
+#message ul li ul,
+#message ul li ol,
+#message ol li ul,
+#message ol li ol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
