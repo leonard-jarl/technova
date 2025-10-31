@@ -2,3 +2,6 @@
 
 Jag använder metoden:
 ``loadMemoryVariables`` i min chatbot för att enkelt kunna hämta tidigare konversationer. Det gör att chatboten kan hålla tråden och ge svar som faktiskt hänger ihop med vad användaren redan sagt. Metoden är också praktisk eftersom den alltid ger något tillbaka även om det inte finns någon chatthistorik än på det vis jag använder den. Samt att det går att skicka in frågan som kan användas för att söka efter relvant information i chatthistoriken. 
+
+## Supabase Tabell
+<img width="2592" height="1494" alt="Skärmbild 2025-10-31 165004" src="https://github.com/user-attachments/assets/0ca66ce2-5f04-4ca8-aaf2-517f9d46651e" />
